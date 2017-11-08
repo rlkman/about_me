@@ -19,7 +19,11 @@ var yesCorrect = function(results) {
   if (results.toLowerCase() === "yes" || results.toLowerCase() === "y") {
     winningMessage();
   } else if (results.toLowerCase() === "no" || results.toLowerCase() === "n") {
-    losingMessage();
+    if (results === questionFive) {
+      alert('Nope, wrong answer. And bummer, that was the last question!');
+    } else {
+      losingMessage();
+    }
   } else {
     wrongInputMessage();
   }
@@ -62,5 +66,5 @@ if (points === 50) {
 } else if (points >= 30) {
   alert('Maybe try again. I could play this game all day.');
 } else {
-  alert('You suck. We\'re not friends anymore. Bye!');
+  alert('You suck. Only ' + points + ' points, really?! We\'re not friends anymore. Bye!');
 }
