@@ -1,10 +1,11 @@
 header {
   text-align: center;
   color: white;
-  background: ff51f0;
+  background: #D419EA;
+  opacity: .4;
   padding-top: 20px;
   padding-bottom: 20px;
-  ff51f0-family: arial;
+  font-family: arial;
 }
 
 p{
