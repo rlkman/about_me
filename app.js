@@ -5,13 +5,16 @@ var points = 0;
 
 var winningMessage = function() {
   points += 10;
-  alert('Woo! Way to go! You have ' + points + ' points, you rock!');
+  console.log('User earned 10 points');
+  alert('Woo! 10 points for you Glen Coco! You go Glen Coco!');
 }
 var losingMessage = function() {
+  console.log('User got no points')
   alert('You really don\'t know me at all, do you? Keep going! Better luck next question!');
 }
 
 var wrongInputMessage = function() {
+  console.log('User inputted an answer that was invalid')
   alert('Excuse me! That is not a valid answer! Please try harder next time.');
 }
 
@@ -64,7 +67,7 @@ console.log("user points after question five", points);
 if (points === 50) {
   alert('Congratulations! You finished with ' + points + "!");
 } else if (points >= 30) {
-  alert('Maybe try again. I could play this game all day.');
+  alert('Only ' + points + ' points.... Maybe try again. I could play this game all day.');
 } else {
   alert('You suck. Only ' + points + ' points, really?! We\'re not friends anymore. Bye!');
 }
