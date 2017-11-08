@@ -42,25 +42,28 @@ var noCorrect = function(results) {
   }
 };
 
-alert('Welcome! By visiting this webpage you have unknowingly subjected yourself to my guessing game. Nobody cares if you want to play or not, you are here now. Let the games begin! You will receive 10 points for a correct answer, and no points for a wrong answer (duh). Lets see how many points you can get before the game is over!');
 
-var questionOne = prompt('Do I like pina coladas?');
+var userName = prompt('Welcome! By visiting this webpage you have unknowingly subjected yourself to my guessing game. Nobody cares if you want to play or not, you are here now. Let the games begin! You will receive 10 points for a correct answer, and no points for a wrong answer (duh). Lets see how many points you can get before the game is over! But first, I\'m going to need to know your name.');
+console.log('name of user', userName);
+alert('Welcome ' + userName + '! Thanks for playing. We may now continue.');
+
+var questionOne = prompt('Do I have a puppy named Chloe?');
 yesCorrect(questionOne);
 console.log('user points after question one', points);
 
-var questionTwo = prompt('Do I like getting lost in the rain?');
+var questionTwo = prompt('Do I love to play baseball?');
 noCorrect(questionTwo);
 console.log('user points after question two', points);
 
-var questionThree = prompt('Am I into yoga?');
+var questionThree = prompt('Have I worked as a hostess in a restaurant?');
 noCorrect(questionThree);
 console.log('user points after question three', points);
 
-var questionFour = prompt('Do I have half a brain?');
+var questionFour = prompt('Am I a wedding photographer on the side?');
 yesCorrect(questionFour);
 console.log('user points after question four', points);
 
-var questionFive = prompt('Do I actually like this song?');
+var questionFive = prompt('Did I move to Seattle from Bremerton?');
 yesCorrect(questionFive);
 console.log('user points after question five', points);
 
