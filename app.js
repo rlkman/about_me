@@ -6,7 +6,7 @@ var points = 0;
 var yesCorrect = function(results) {
   if (results.toLowerCase() === "yes" || results.toLowerCase() === "y") {
     return true;
-  } else if (results.toLowerCase() !=== "no" || results.toLowerCase() ! === "n") {
+  } else if (results.toLowerCase() !== "no" || results.toLowerCase() !== "n") {
     return null;
   }
 }
