@@ -5,3 +5,8 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

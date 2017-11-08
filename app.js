@@ -14,7 +14,7 @@ var losingMessage = function() {
 }
 
 var wrongInputMessage = function() {
-  console.log('User inputted an answer that was invalid')
+  console.log('User input an answer that was invalid')
   alert('Excuse me! That is not a valid answer! Please try harder next time.');
 }
 
