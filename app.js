@@ -69,60 +69,72 @@ alert('Welcome ' + userName + '! Thanks for playing. We may now continue.');
 // }
 // console.log('user points after question five', points);
 
-var questionSix = prompt('How many puppies do I want to have someday?');
-var randomNumber = Math.floor(Math.random() * 100);
-console.log('number they were supposed to guess', randomNumber);
-for (var i = 0; i <4; i++) {
-  console.log('number they guessed', questionSix);
-  console.log('value of i', i);
-  if (isNaN(questionSix)) {
-    if (i === 3) {
-      alert('That was your last try, sorry!');
-    } else {
-      questionSix = prompt('That is not a valid answer. Please try harder next time.');
+// var questionSix = prompt('How many puppies do I want to have someday?');
+// var randomNumber = Math.floor(Math.random() * 100);
+// console.log('number they were supposed to guess', randomNumber);
+// for (var i = 0; i <4; i++) {
+//   console.log('number they guessed', questionSix);
+//   console.log('value of i', i);
+//   if (isNaN(questionSix)) {
+//     if (i === 3) {
+//       alert('That was your last try, sorry!');
+//     } else {
+//       questionSix = prompt('That is not a valid answer. Please try harder next time.');
+//     }
+//   } else if (questionSix < randomNumber) {
+//     if (i === 3) {
+//       alert('Ooh, that was your last try! Sorry!');
+//     } else if (i ===2) {
+//       questionSix = prompt('Careful! This is your last try!');
+//     } else {
+//       questionSix = prompt('Oooh, no cigar. You\'re a little bit too low. Try again!');
+//     }
+//   } else if (questionSix > randomNumber) {
+//     if (i === 3) {
+//       alert('Ooh, that was your last try! Sorry!');
+//     } else {
+//       questionSix = prompt('Too high!! Dial it back a little bit, crazy.');
+//     }
+//   } else {
+//     alert('WOW! I\'m impressed! I can\'t believe you guessed that. 10 points for you!');
+//     points +=10;
+//     i = 4;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+var placesAnswers = ['Philippines', 'Canada', 'New Orleans', 'California', 'Oregon'];
+for (var j = 0; j < 6; j++) {
+  var questionSeven = prompt('What places have I visited?').toLowerCase();
+  for (var k = 0; k < 5; k++) {
+    console.log(k);
+    console.log(questionSeven);
+    if (questionSeven === placesAnswers[k].toLowerCase()) {
+      alert('Wow! Good for you, ' + userName + '. \n \n \nThe correct possible answers were: \n' + placesAnswers[0] + ', ' + placesAnswers[1] + ', ' + placesAnswers[2] + ', ' + placesAnswers[3] + ', ' + placesAnswers[4]);
+      k = 5;
+      j = 6;
+      points +=10;
+      // NEED TO ADD CODE IN HERE THAT DISPLAYS ALL THE ANSWERS
     }
-  } else if (questionSix < randomNumber) {
-    if (i === 3) {
-      alert('Ooh, that was your last try! Sorry!');
-    } else if (i ===2) {
-      questionSix = prompt('Careful! This is your last try!');
-    } else {
-      questionSix = prompt('Oooh, no cigar. You\'re a little bit too low. Try again!');
-    }
-  } else if (questionSix > randomNumber) {
-    if (i === 3) {
-      alert('Ooh, that was your last try! Sorry!');
-    } else {
-      questionSix = prompt('Too high!! Dial it back a little bit, crazy.');
-    }
-  } else {
-    alert('WOW! I\'m impressed! I can\'t believe you guessed that. 10 points for you!');
-    points +=10;
-    i = 4;
+  }
+  if (j === 4) {
+    alert('Careful! Last try!');
+  } else if (j === 5) {
+    alert('Oh no! That was your last try!');
+  } else if (j < 4){
+    alert('Nope! Try again!');
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-var placesAnswers = ['philippines', 'canada', 'new orleans', 'california', 'oregon'];
-var questionSeven = prompt('What places have I visited?').toLowerCase();
-for (i = 0; i < 5; i++) {
-  if (questionSeven === placesAnswers[i]) {
-    alert('Wow! Good for you, ' + userName + '.');
-    i = 5;
-    // NEED TO ADD CODE IN HERE THAT DISPLAYS ALL THE ANSWERS
-  }
-}
-
 
 
 
