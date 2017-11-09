@@ -104,6 +104,39 @@ for (var i = 0; i <4; i++) {
 
 
 
+
+
+
+
+
+
+
+
+
+var placesAnswers = ['philippines', 'canada', 'new orleans', 'california', 'oregon'];
+var questionSeven = prompt('What places have I visited?').toLowerCase();
+for (i = 0; i < 5; i++) {
+  if (questionSeven === placesAnswers[i]) {
+    alert('Wow! Good for you, ' + userName + '.');
+    i = 5;
+    // NEED TO ADD CODE IN HERE THAT DISPLAYS ALL THE ANSWERS
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (points === 70) {
   alert('Congratulations! You got 7/7 answers correct and finished with 70 points!');
 } else if (points >= 40) {
