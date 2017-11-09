@@ -1,76 +1,133 @@
 'use strict';
 
-
 var points = 0;
-
-var winningMessage = function() {
-  points += 10;
-  console.log('User earned 10 points');
-  alert('Woo! 10 points for you Glen Coco! You go Glen Coco!');
-};
-var losingMessage = function() {
-  console.log('User got no points');
-  alert('You really don\'t know me at all, do you? Keep going! Better luck next question!');
-};
-
-var wrongInputMessage = function() {
-  console.log('User input an answer that was invalid');
-  alert('Excuse me! That is not a valid answer! Please try harder next time.');
-};
-
-var yesCorrect = function(results) {
-  if (results.toLowerCase() === 'yes' || results.toLowerCase() === 'y') {
-    winningMessage();
-  } else if (results.toLowerCase() === 'no' || results.toLowerCase() === 'n') {
-    if (results === questionFive) {
-      alert('Nope, wrong answer. And bummer, that was the last question!');
-    } else {
-      losingMessage();
-    }
-  } else {
-    wrongInputMessage();
-  }
-};
-
-var noCorrect = function(results) {
-  if (results.toLowerCase() === 'no' || results.toLowerCase() === 'n') {
-    winningMessage();
-  } else if (results.toLowerCase() === 'yes' || results.toLowerCase() === 'y') {
-    losingMessage();
-  } else {
-    wrongInputMessage();
-  }
-};
-
 
 var userName = prompt('Welcome! By visiting this webpage you have unknowingly subjected yourself to my guessing game. Nobody cares if you want to play or not, you are here now. Let the games begin! You will receive 10 points for a correct answer, and no points for a wrong answer (duh). Lets see how many points you can get before the game is over! But first, I\'m going to need to know your name.');
 console.log('name of user', userName);
 alert('Welcome ' + userName + '! Thanks for playing. We may now continue.');
 
-var questionOne = prompt('Do I have a puppy named Chloe?');
-yesCorrect(questionOne);
+var questionOne = prompt('Do I have a puppy named Chloe?').toLowerCase();
+if (questionOne === 'y' || questionOne === 'yes') {
+  points += 10;
+  alert('Way to go, ' + userName + '! You have earned 10 points! Chloe is an Australian Shepherd/Pitbull mix and goes by Clubby for short.');
+} else if (questionOne === 'n' || questionOne === 'no') {
+  alert('Ooh, not so good. Better luck next time, ' + userName);
+} else {
+  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+}
 console.log('user points after question one', points);
 
-var questionTwo = prompt('Do I love to play baseball?');
-noCorrect(questionTwo);
+var questionTwo = prompt('Do I love to play baseball?').toLowerCase();
+if (questionTwo === 'n' || questionTwo === 'no') {
+  points += 10;
+  alert('Woop woop! ' + userName + '! You have earned 10 points! I have never liked baseball, but I do love basketball!');
+} else if (questionTwo === 'y' || questionTwo === 'yes') {
+  if (points === 0) {
+    alert('Ugh, ' + userName + ', you really need to study up. At this rate you won\'t get any right!');
+  } else {
+    alert('Ooh, not your best. Better luck next time, ' + userName);
+  }
+} else {
+  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+}
 console.log('user points after question two', points);
 
-var questionThree = prompt('Have I worked as a hostess in a restaurant?');
-noCorrect(questionThree);
+var questionThree = prompt('Have I worked as a hostess in a restaurant?').toLowerCase();
+if (questionThree === 'n' || questionThree === 'no') {
+  points += 10;
+  alert('Ohhh yeah, ' + userName + '! You have earned 10 points! I started as a waitress, not a hostess.');
+} else if (questionThree === 'y' || questionThree === 'yes') {
+  if (points === 0) {
+    alert('Ugh, ' + userName + ', you really need to study up. At this rate you won\'t get any right!');
+  } else {
+    alert('Ooh, not your best. Better luck next time, ' + userName);
+  }
+} else {
+  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+}
 console.log('user points after question three', points);
 
-var questionFour = prompt('Am I a wedding photographer on the side?');
-yesCorrect(questionFour);
+var questionFour = prompt('Am I a wedding photographer on the side?').toLowerCase();
+if (questionFour === 'y' || questionFour === 'yes') {
+  points += 10;
+  alert('Way to go, ' + userName + '! You have earned 10 points! You need photos taken? I\'m your gal!');
+} else if (questionFour === 'n' || questionFour === 'no') {
+  alert('Ooh, not so good. Better luck next time, ' + userName);
+} else {
+  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+}
 console.log('user points after question four', points);
 
-var questionFive = prompt('Did I move to Seattle from Bremerton?');
-yesCorrect(questionFive);
+var questionFive = prompt('Did I move to Seattle from Bremerton?').toLowerCase();
+if (questionFive === 'y' || questionFive === 'yes') {
+  points += 10;
+  alert('Way to go, ' + userName + '! You have earned 10 points! I moved to Seattle to attend UW in 2010.');
+} else if (questionFive === 'n' || questionFive === 'no') {
+  alert('Ooh, not so good. Better luck next time, ' + userName);
+} else {
+  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+}
 console.log('user points after question five', points);
 
-if (points === 50) {
-  alert('Congratulations! You finished with ' + points + '!');
-} else if (points >= 30) {
-  alert('Only ' + points + ' points.... Maybe try again. I could play this game all day.');
+var questionSix = prompt('How many puppies do I want to have someday?');
+var randomNumber = Math.floor(Math.random() * 100);
+console.log('number they were supposed to guess', randomNumber);
+for (var i = 0; i <4; i++) {
+  console.log('number they guessed', questionSix);
+  console.log('value of i', i);
+  if (isNaN(questionSix)) {
+    if (i === 3) {
+      alert('That was your last try, sorry!');
+    } else {
+      questionSix = prompt('That is not a valid answer. Please try harder next time.');
+    }
+  } else if (questionSix < randomNumber) {
+    if (i === 3) {
+      alert('Ooh, that was your last try! Sorry!');
+    } else if (i ===2) {
+      questionSix = prompt('Careful! This is your last try!');
+    } else {
+      questionSix = prompt('Oooh, no cigar. You\'re a little bit too low. Try again!');
+    }
+  } else if (questionSix > randomNumber) {
+    if (i === 3) {
+      alert('Ooh, that was your last try! Sorry!');
+    } else {
+      questionSix = prompt('Too high!! Dial it back a little bit, crazy.');
+    }
+  } else {
+    alert('WOW! I\'m impressed! I can\'t believe you guessed that. 10 points for you!');
+    points +=10;
+    i = 4;
+  }
+}
+
+var placesAnswers = ['Philippines', 'Canada', 'New Orleans', 'California', 'Oregon'];
+for (var j = 0; j < 6; j++) {
+  var questionSeven = prompt('What places have I visited?').toLowerCase();
+  for (var k = 0; k < 5; k++) {
+    console.log(k);
+    console.log(questionSeven);
+    if (questionSeven === placesAnswers[k].toLowerCase()) {
+      alert('Wow! Good for you, ' + userName + '. \n \n \nThe correct possible answers were: \n' + placesAnswers[0] + ', ' + placesAnswers[1] + ', ' + placesAnswers[2] + ', ' + placesAnswers[3] + ', ' + placesAnswers[4]);
+      k = 5;
+      j = 6;
+      points +=10;
+    }
+  }
+  if (j === 4) {
+    alert('Careful! Last try!');
+  } else if (j === 5) {
+    alert('Oh no! That was your last try! \n\n\nThe correct possible answers were: \n' + placesAnswers[0] + ', ' + placesAnswers[1] + ', ' + placesAnswers[2] + ', ' + placesAnswers[3] + ', ' + placesAnswers[4]);
+  } else if (j < 4){
+    alert('Nope! Try again!');
+  }
+}
+
+if (points === 70) {
+  alert('Congratulations! You got 7/7 answers correct and finished with 70 points!');
+} else if (points >= 40) {
+  alert('Only ' + points + ' points.... Maybe try again, ' + userName + '. You only got ' + points/10 + '/10 answers correct. I could play this game all day.');
 } else {
-  alert('You suck. Only ' + points + ' points, really?! We\'re not friends anymore. Bye!');
+  alert('You suck. Only ' + points + ' points, really?! That\'s ' + points/10 + '/10 questions. We\'re not friends anymore. Bye!');
 }
