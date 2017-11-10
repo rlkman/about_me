@@ -1,19 +1,45 @@
-header {
-  text-align: center;
+header{
   color: white;
-  background: #D419EA;
-  opacity: .4;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: arial;
+  background-color: black;
+}
+
+body{
+  margin:500;
+  height:100%;
+  font-family: helvetica;
+  text-align: center;
+  background-color: blue;
 }
 
 p{
-  font-family: arial;
+  text-align: center;
+  color: gray;
+  border-color: black;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    font-family: arial;
+ul li{
+  list-style: circle;
+  text-align: left;
+  color:red;
+  margin-left: 500px;
+}
+
+ol li{
+  left-margin: 500px;
+  text-align: left;
+  color:green;
+}
+
+footer{
+  clear: left;
+  padding:10px;
+  background-color: gray;
+  text-align: center;
+}
+
+div{
+  color: red;
+  border-width: thick;
+  border-color: yellow;
+  padding: 10;
 }

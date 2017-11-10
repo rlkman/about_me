@@ -1,133 +1,139 @@
 'use strict';
 
-var points = 0;
+//Welcomes the user interactivelly
+var userName = prompt('Welcome to my page, Could you please fill in your name');
+console.log('User Name supplied:', userName);
+alert('Thank you '+ userName +' take yout time to know me.' );
 
-var userName = prompt('Welcome! By visiting this webpage you have unknowingly subjected yourself to my guessing game. Nobody cares if you want to play or not, you are here now. Let the games begin! You will receive 10 points for a correct answer, and no points for a wrong answer (duh). Lets see how many points you can get before the game is over! But first, I\'m going to need to know your name.');
-console.log('name of user', userName);
-alert('Welcome ' + userName + '! Thanks for playing. We may now continue.');
 
-var questionOne = prompt('Do I have a puppy named Chloe?').toLowerCase();
-if (questionOne === 'y' || questionOne === 'yes') {
-  points += 10;
-  alert('Way to go, ' + userName + '! You have earned 10 points! Chloe is an Australian Shepherd/Pitbull mix and goes by Clubby for short.');
-} else if (questionOne === 'n' || questionOne === 'no') {
-  alert('Ooh, not so good. Better luck next time, ' + userName);
+//The guessing game starts here
+
+//Question1
+var continentsVisited = prompt('Have I visited all 5 continents?');
+console.log('will accept yes or no answer:', continentsVisited);
+
+if((continentsVisited.toLowerCase() ==='yes'|| continentsVisited.toUpperCase() === 'YES' )||
+  (continentsVisited.toLowerCase() === 'y'|| continentsVisited.toUpperCase() === 'Y' )){
+  alert('Nope, '+ userName +' I am still to visit a couple..!!');
 } else {
-  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
+  alert('Hey '+userName+' that\'s true I am still to do that.');
 }
-console.log('user points after question one', points);
 
-var questionTwo = prompt('Do I love to play baseball?').toLowerCase();
-if (questionTwo === 'n' || questionTwo === 'no') {
-  points += 10;
-  alert('Woop woop! ' + userName + '! You have earned 10 points! I have never liked baseball, but I do love basketball!');
-} else if (questionTwo === 'y' || questionTwo === 'yes') {
-  if (points === 0) {
-    alert('Ugh, ' + userName + ', you really need to study up. At this rate you won\'t get any right!');
-  } else {
-    alert('Ooh, not your best. Better luck next time, ' + userName);
+//Question2
+var favouriteMovie = prompt('Do I have a favourite movie?');
+console.log('will accept yes or no answer:', favouriteMovie);
+
+if((favouriteMovie.toLowerCase() === 'no'|| favouriteMovie.toUpperCase() === 'NO' )||
+    (continentsVisited.toLowerCase() === 'n'|| continentsVisited.toUpperCase() === 'N' )){
+  alert(userName + ' You are right, I dont like movies that much!!');
+} else {
+  alert('That\'s unfortunately not true, '+ userName);
+}
+
+//Question3
+var petsOwned = prompt('Do I own any pets?');
+console.log('will accept yes or no answer:', petsOwned);
+
+if((petsOwned.toLowerCase() === 'yes'|| petsOwned.toUpperCase() === 'YES' )||
+      (petsOwned.toLowerCase() === 'y'|| petsOwned.toUpperCase() === 'Y' )){
+  alert('Nope, Unfotunately I love travelling too much to give enough attention to a pet');
+} else {
+  alert('That\'s true I do not own a pet - I spend too much time on planes.');
+}
+
+//Question4
+var teamSupported = prompt('Do I support Liverpool Football Club?');
+console.log('will accept yes or no answer:'+teamSupported);
+
+if((continentsVisited.toLowerCase() === 'no'|| continentsVisited.toUpperCase() === 'NO' )||
+        (continentsVisited.toLowerCase() === 'n'|| continentsVisited.toUpperCase() === 'N' )){
+  alert('Are they any other teams...'+ userName + '???...YNWA.');
+} else {
+  alert('Definitely, '+ userName +', I support Liverpool FC...YNWA...!!!');
+}
+
+//Question4
+var travelQuestion = prompt('Do I like travelling?');
+console.log('will accept yes or no answer:', travelQuestion);
+
+if((travelQuestion.toLowerCase() === 'yes'|| travelQuestion.toUpperCase() === 'YES' )||
+        (travelQuestion.toLowerCase() === 'y'|| travelQuestion.toUpperCase() === 'Y' )){
+  alert('Definitely, '+ userName +', you bet...!!!');
+} else {
+  alert('There\'s so much of the world to see.'+ userName + ', travelling is brilliant.');
+}
+
+//Question5
+var placeOfBirth = prompt('Was I born in Asia?').toLowerCase();
+console.log('place of birth:', placeOfBirth);
+if(placeOfBirth === 'yes' || placeOfBirth === 'y'){
+  alert('Sorry ' + userName+ ', I was born in Mutare, Zimbabwe, Africa.');
+} else {
+  alert('You are right, '+userName+', I was born in Mutare, Zimbabwe, Africa.');
+}
+
+//Question6 - requires the use of a for loop to go through 4 times
+var myFavNumber = 14;
+var guessedNumber = Number(prompt('Please guess a number?'));
+console.log('Number user guessed:', guessedNumber);
+//while(guessedNumber !== myFavNumber){
+for(var i = 0; i < 3; i++){
+  if(guessedNumber > myFavNumber){
+    guessedNumber = Number(prompt(guessedNumber + ' is too high, try again'));
+    console.log('Number user guessed high:', guessedNumber);
+  } else if (guessedNumber < myFavNumber){
+    guessedNumber = Number(prompt(guessedNumber + ' is too low, try again'));
+    console.log('Number user guessed low:', guessedNumber);
+  } else if (guessedNumber === myFavNumber){
+    alert('You have guessed the right number '+guessedNumber+'. Welldone '+ userName);
+    console.log('Number user guessed the correct number:', guessedNumber);
+    break;
   }
-} else {
-  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
 }
-console.log('user points after question two', points);
 
-var questionThree = prompt('Have I worked as a hostess in a restaurant?').toLowerCase();
-if (questionThree === 'n' || questionThree === 'no') {
-  points += 10;
-  alert('Ohhh yeah, ' + userName + '! You have earned 10 points! I started as a waitress, not a hostess.');
-} else if (questionThree === 'y' || questionThree === 'yes') {
-  if (points === 0) {
-    alert('Ugh, ' + userName + ', you really need to study up. At this rate you won\'t get any right!');
-  } else {
-    alert('Ooh, not your best. Better luck next time, ' + userName);
-  }
-} else {
-  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
-}
-console.log('user points after question three', points);
+alert('Thanks for playing the number guessing game, please continue.');
 
-var questionFour = prompt('Am I a wedding photographer on the side?').toLowerCase();
-if (questionFour === 'y' || questionFour === 'yes') {
-  points += 10;
-  alert('Way to go, ' + userName + '! You have earned 10 points! You need photos taken? I\'m your gal!');
-} else if (questionFour === 'n' || questionFour === 'no') {
-  alert('Ooh, not so good. Better luck next time, ' + userName);
-} else {
-  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
-}
-console.log('user points after question four', points);
+//Question7 - array of 6 correct answers that are checked on and gives tally at the enjoyed
+var placesVisited = ['iceland', 'norway', 'southafrica', 'faroe', 'canada', 'holland'];
+var guessedPlacesVisited = ' ';
+var tally = 0;
 
-var questionFive = prompt('Did I move to Seattle from Bremerton?').toLowerCase();
-if (questionFive === 'y' || questionFive === 'yes') {
-  points += 10;
-  alert('Way to go, ' + userName + '! You have earned 10 points! I moved to Seattle to attend UW in 2010.');
-} else if (questionFive === 'n' || questionFive === 'no') {
-  alert('Ooh, not so good. Better luck next time, ' + userName);
-} else {
-  alert('Hey! You didn\'t input a valid answer! Please try harder next time.');
-}
-console.log('user points after question five', points);
-
-var questionSix = prompt('How many puppies do I want to have someday?');
-var randomNumber = Math.floor(Math.random() * 100);
-console.log('number they were supposed to guess', randomNumber);
-for (var i = 0; i <4; i++) {
-  console.log('number they guessed', questionSix);
-  console.log('value of i', i);
-  if (isNaN(questionSix)) {
-    if (i === 3) {
-      alert('That was your last try, sorry!');
-    } else {
-      questionSix = prompt('That is not a valid answer. Please try harder next time.');
+console.log('length of array:',placesVisited.length);
+//while(loopCounter < placesVisited.length){
+for(var loopCount = 0; loopCount < placesVisited.length; loopCount++){
+  guessedPlacesVisited = prompt('Please guess the countries I have been to.').toLowerCase();
+  //console.log('guess of place visited:',guessedPlacesVisited);
+  for(var j=0; j < placesVisited.length; j++){
+    //console.log('traversing array:', placesVisited[i]);
+    if(guessedPlacesVisited === placesVisited[j]){
+      console.log('a place visited:', placesVisited[j]);
+      console.log('guessedPlacesVisited:', guessedPlacesVisited);
+      alert('That\'s one of them, go again');
+      tally = tally + 1;
+      console.log('tally value:',tally);
+      break;
+    //loopCounter++;
     }
-  } else if (questionSix < randomNumber) {
-    if (i === 3) {
-      alert('Ooh, that was your last try! Sorry!');
-    } else if (i ===2) {
-      questionSix = prompt('Careful! This is your last try!');
-    } else {
-      questionSix = prompt('Oooh, no cigar. You\'re a little bit too low. Try again!');
-    }
-  } else if (questionSix > randomNumber) {
-    if (i === 3) {
-      alert('Ooh, that was your last try! Sorry!');
-    } else {
-      questionSix = prompt('Too high!! Dial it back a little bit, crazy.');
-    }
-  } else {
-    alert('WOW! I\'m impressed! I can\'t believe you guessed that. 10 points for you!');
-    points +=10;
-    i = 4;
   }
+  console.log('NOT a place visited:',guessedPlacesVisited);
+  //alert('That is not a counrty I have been to, try again');
 }
 
-var placesAnswers = ['Philippines', 'Canada', 'New Orleans', 'California', 'Oregon'];
-for (var j = 0; j < 6; j++) {
-  var questionSeven = prompt('What places have I visited?').toLowerCase();
-  for (var k = 0; k < 5; k++) {
-    console.log(k);
-    console.log(questionSeven);
-    if (questionSeven === placesAnswers[k].toLowerCase()) {
-      alert('Wow! Good for you, ' + userName + '. \n \n \nThe correct possible answers were: \n' + placesAnswers[0] + ', ' + placesAnswers[1] + ', ' + placesAnswers[2] + ', ' + placesAnswers[3] + ', ' + placesAnswers[4]);
-      k = 5;
-      j = 6;
-      points +=10;
-    }
-  }
-  if (j === 4) {
-    alert('Careful! Last try!');
-  } else if (j === 5) {
-    alert('Oh no! That was your last try! \n\n\nThe correct possible answers were: \n' + placesAnswers[0] + ', ' + placesAnswers[1] + ', ' + placesAnswers[2] + ', ' + placesAnswers[3] + ', ' + placesAnswers[4]);
-  } else if (j < 4){
-    alert('Nope! Try again!');
-  }
+alert(userName + ' you got ' + tally + ' out of ' + placesVisited.length + ' correct');
+
+
+
+if (window.confirm('Hope you enjoyed answering these questions.')) {
+  console.log('use of confirm');
+  window.open('exit.html', 'Thanks for playing!');
 }
 
-if (points === 70) {
-  alert('Congratulations! You got 7/7 answers correct and finished with 70 points!');
-} else if (points >= 40) {
-  alert('Only ' + points + ' points.... Maybe try again, ' + userName + '. You only got ' + points/10 + '/10 answers correct. I could play this game all day.');
-} else {
-  alert('You suck. Only ' + points + ' points, really?! That\'s ' + points/10 + '/10 questions. We\'re not friends anymore. Bye!');
-}
+//trying something new
+var greeting = 'Thank you for spending the time getting to know me ';
+
+var welcomeMessage = greeting + name + '!';
+
+var el = document.getElementById('greeting');
+el.textContent = welcomeMessage;
+
+console.log('combined output');
