@@ -128,7 +128,7 @@ if (window.confirm('Hope you enjoyed answering these questions.')) {
   window.open('exit.html', 'Thanks for playing!');
 }
 
-//trying something new
+//trying something new trying out getElementById
 var greeting = 'Thank you for spending the time getting to know me ';
 
 var welcomeMessage = greeting + name + '!';
@@ -136,4 +136,4 @@ var welcomeMessage = greeting + name + '!';
 var el = document.getElementById('greeting');
 el.textContent = welcomeMessage;
 
-console.log('combined output');
+console.log('Worked Well!!');
